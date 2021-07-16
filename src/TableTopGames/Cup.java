@@ -19,13 +19,13 @@ public class Cup {
         }
     }
 
-    public static void rollSome(Cup cup, List<Integer> diceToRoll) {
-        for (int i = 0; i < cup.dice.length; i++) {
+    public void rollSome(List<Integer> diceToRoll) {
+        for (int i = 0; i < dice.length; i++) {
 
             for (int j = 0; j < diceToRoll.size(); j++) {
 
                 if (i == diceToRoll.get(j)) {
-                    cup.dice[diceToRoll.get(j)].roll();
+                    dice[diceToRoll.get(j)].roll();
                 }
             }
         }

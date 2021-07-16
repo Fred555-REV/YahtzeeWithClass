@@ -28,7 +28,7 @@ public class Menu {
         diceToRoll.add(3);
 
 
-        Cup.rollSome(cup, diceToRoll);
+        cup.rollSome(diceToRoll);
 
         System.out.println("\nRolling second and fourth dice\n");
 
