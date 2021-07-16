@@ -13,6 +13,29 @@ public class Menu {
             Cup.addDice(cup, new Die(), i);
         }
 
+        System.out.println("die " + die.value);
+        Die.roll(die);
+        System.out.println("die " + die.value);
+
+        Cup.rollAll(cup);
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("cup die " + (i + 1) + " = " + cup.dice[i].value);
+        }
+
+        List<Integer> diceToRoll = new ArrayList<>();
+        diceToRoll.add(1);
+        diceToRoll.add(3);
+
+
+        Cup.rollSome(cup, diceToRoll);
+
+        System.out.println("\nRolling second and fourth dice\n");
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("cup die " + (i + 1) + " = " + cup.dice[i].value);
+        }
+
     }
 }
 /*

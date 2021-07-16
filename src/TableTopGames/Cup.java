@@ -13,13 +13,19 @@ public class Cup {
         cup.dice[index] = die;
     }
 
-    public static void roll(Cup cup, List<Integer> diceToRoll) {
+    public static void rollAll(Cup cup) {
+        for (int i = 0; i < cup.dice.length; i++) {
+            Die.roll(cup.dice[i]);
+        }
+    }
+
+    public static void rollSome(Cup cup, List<Integer> diceToRoll) {
         for (int i = 0; i < cup.dice.length; i++) {
 
             for (int j = 0; j < diceToRoll.size(); j++) {
 
                 if (i == diceToRoll.get(j)) {
-                    cup.dice[j].value = (int) Math.floor(Math.random() * cup.dice[j].numberOfSides) + 1;
+                    Die.roll(cup.dice[diceToRoll.get(j)]);
                 }
             }
         }
