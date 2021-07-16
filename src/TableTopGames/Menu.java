@@ -14,10 +14,10 @@ public class Menu {
         }
 
         System.out.println("die " + die.value);
-        Die.roll(die);
+        die.roll();
         System.out.println("die " + die.value);
 
-        Cup.rollAll(cup);
+        cup.rollAll();
 
         for (int i = 0; i < 5; i++) {
             System.out.println("cup die " + (i + 1) + " = " + cup.dice[i].value);

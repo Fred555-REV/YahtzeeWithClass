@@ -14,7 +14,7 @@ public class Die {
         this.numberOfSides = numberOfSides;
     }
 
-    public static void roll(Die die) {
-        die.value = (int) Math.floor(Math.random() * die.numberOfSides) + 1;
+    public void roll() {
+        value = (int) Math.floor(Math.random() * numberOfSides) + 1;
     }
 }

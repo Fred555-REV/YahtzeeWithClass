@@ -13,9 +13,9 @@ public class Cup {
         cup.dice[index] = die;
     }
 
-    public static void rollAll(Cup cup) {
-        for (int i = 0; i < cup.dice.length; i++) {
-            Die.roll(cup.dice[i]);
+    public void rollAll() {
+        for (Die die : dice) {
+            die.roll();
         }
     }
 
@@ -25,7 +25,7 @@ public class Cup {
             for (int j = 0; j < diceToRoll.size(); j++) {
 
                 if (i == diceToRoll.get(j)) {
-                    Die.roll(cup.dice[diceToRoll.get(j)]);
+                    cup.dice[diceToRoll.get(j)].roll();
                 }
             }
         }
