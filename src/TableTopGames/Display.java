@@ -28,7 +28,7 @@ public class Display {
     }
 
     public static void turn() {
-        System.out.println(players.get(Turn.turnCounter).name + "'s turn");
+        System.out.println(Turn.players.get(Turn.turnCounter).name + "'s turn");
     }
 
     public static void turnsLeft() {
