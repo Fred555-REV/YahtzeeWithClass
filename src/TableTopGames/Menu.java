@@ -2,39 +2,27 @@ package TableTopGames;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Menu {
 
     public static void main(String[] args) {
         // write your code here
-        Die die = new Die();
         Cup cup = new Cup(5);
-        for (int i = 0; i < 5; i++) {
-            Cup.addDice(cup, new Die(), i);
-        }
+        Scanner scan = new Scanner(System.in);
+        String diceToRoll;
 
-        System.out.println("die " + die.value);
-        die.roll();
-        System.out.println("die " + die.value);
-
+        cup.addDice();
         cup.rollAll();
-
-        for (int i = 0; i < 5; i++) {
-            System.out.println("cup die " + (i + 1) + " = " + cup.dice[i].value);
-        }
-
-        List<Integer> diceToRoll = new ArrayList<>();
-        diceToRoll.add(1);
-        diceToRoll.add(3);
-
-
-        cup.rollSome(diceToRoll);
-
-        System.out.println("\nRolling second and fourth dice\n");
-
-        for (int i = 0; i < 5; i++) {
-            System.out.println("cup die " + (i + 1) + " = " + cup.dice[i].value);
-        }
+        Display.dice(cup);
+        System.out.println("select dice you want to re-roll (1-5)");
+        diceToRoll = scan.nextLine(); // "1 2 5"
+        cup.rollSome(cup.selections(diceToRoll));
+        Display.dice(cup);
+        System.out.println("select dice you want to re-roll (1-5)");
+        diceToRoll = scan.nextLine(); // "1 2 5"
+        cup.rollSome(cup.selections(diceToRoll));
+        Display.dice(cup);
 
     }
 }

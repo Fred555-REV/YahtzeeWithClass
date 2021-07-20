@@ -1,5 +1,6 @@
 package TableTopGames;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cup {
@@ -9,8 +10,10 @@ public class Cup {
         this.dice = new Die[diceAmount];
     }
 
-    public static void addDice(Cup cup, Die die, int index) {
-        cup.dice[index] = die;
+    public void addDice() {
+        for (int i = 0; i < dice.length; i++) {
+            dice[i] = new Die();
+        }
     }
 
     public void rollAll() {
@@ -29,5 +32,16 @@ public class Cup {
                 }
             }
         }
+    }
+
+    public List<Integer> selections(String diceToRoll) {
+        String[] inputArr = diceToRoll.split(" "); // ["1", "2", "5"]
+        // String[] -> List<Integer>
+        List<Integer> selections = new ArrayList<>();
+        for (String number : inputArr) {
+            selections.add(Integer.parseInt(number) - 1);
+        }
+
+        return selections;
     }
 }
