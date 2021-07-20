@@ -12,8 +12,8 @@ public class Menu {
         Turn.createPlayers();
         Turn.setTurns();
         while (Turn.turnMax != 0) {
-            Turn.displayTurn();
-            Turn.displayTurnsLeft();
+            Display.turn();
+            Display.turnsLeft();
             game.play(Turn.players.get(Turn.turnCounter));
         }
     }

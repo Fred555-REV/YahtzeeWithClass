@@ -47,11 +47,5 @@ public class Turn {
         turnMax--;
     }
 
-    public static void displayTurn() {
-        System.out.println(players.get(turnCounter).name + "'s or ");
-    }
 
-    public static void displayTurnsLeft() {
-        System.out.println(turnMax + " turns left in game");
-    }
 }

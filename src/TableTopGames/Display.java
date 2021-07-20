@@ -27,4 +27,11 @@ public class Display {
         System.out.println(player.score);
     }
 
+    public static void turn() {
+        System.out.println(players.get(Turn.turnCounter).name + "'s turn");
+    }
+
+    public static void turnsLeft() {
+        System.out.println(Turn.turnMax + " turns left in game");
+    }
 }
