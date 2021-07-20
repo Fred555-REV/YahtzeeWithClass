@@ -8,22 +8,14 @@ public class Menu {
 
     public static void main(String[] args) {
         // write your code here
-        Cup cup = new Cup(5);
-        Scanner scan = new Scanner(System.in);
-        String diceToRoll;
-
-        cup.addDice();
-        cup.rollAll();
-        Display.dice(cup);
-        System.out.println("select dice you want to re-roll (1-5)");
-        diceToRoll = scan.nextLine(); // "1 2 5"
-        cup.rollSome(cup.selections(diceToRoll));
-        Display.dice(cup);
-        System.out.println("select dice you want to re-roll (1-5)");
-        diceToRoll = scan.nextLine(); // "1 2 5"
-        cup.rollSome(cup.selections(diceToRoll));
-        Display.dice(cup);
-
+        Yahtzee game = new Yahtzee();
+        Turn.createPlayers();
+        Turn.setTurns();
+        while (Turn.turnMax != 0) {
+            Turn.displayTurn();
+            Turn.displayTurnsLeft();
+            game.play(Turn.players.get(Turn.turnCounter));
+        }
     }
 }
 /*

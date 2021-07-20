@@ -5,7 +5,7 @@ public class Player {
     String name;
     int score;
 
-    public Player(String name, Cup cup) {
+    public Player(String name) {
         this.name = name;
         this.score = 0;
     }
@@ -13,5 +13,4 @@ public class Player {
     public void getCup(int diceAmount) {
         this.cup = new Cup(diceAmount);
     }
-
 }
