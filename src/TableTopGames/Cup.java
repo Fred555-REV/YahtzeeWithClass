@@ -16,6 +16,12 @@ public class Cup {
         }
     }
 
+    public void addDice(int numOfSides) {
+        for (int i = 0; i < dice.length; i++) {
+            dice[i] = new Die(numOfSides);
+        }
+    }
+
     public void rollAll() {
         for (Die die : dice) {
             die.roll();
